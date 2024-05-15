@@ -99,7 +99,7 @@ class CustomEnv(gym.vector.VectorEnv):
         
         
         # collect the indecies of terminated and timeouted trajectories and reset them
-        dones=torch.nonzero(torch.logical_or(self.terminated, self.time_out)).squeeze()
+        dones=torch.nonzero(self.ended).squeeze()
         self.reset_env(dones)
         
         # create info log
