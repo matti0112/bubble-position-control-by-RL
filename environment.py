@@ -21,7 +21,7 @@ class CustomEnv(gym.vector.VectorEnv):
                  act_dim: int = 2):
         #self.action_space = gym.spaces.Box(low=-1.0, high=1.0, shape=(2,))  # 2D continuous action space ez így nem jó, PA nem lehet -1
         action_space = gym.spaces.Box(low=np.array([0.0, 0.0]), high=np.array([1.0*1e5, 0.5 * np.pi]), shape=(2, ))
-        observation_space = gym.spaces.Box(low=np.array([0.0, 0.0, 0.0, 0.0]), high=np.array([1.0, 1.0, 1.0, 1.0]), shape=(4, ) )   #!!!!!!
+        observation_space = gym.spaces.Box(low=np.array([0.0, -0.75, -500.0, -1.0]), high=np.array([10.0, 1.0, 500.0, 1.0]), shape=(4, ) )   #!!!!!!
         #self.observation_space = gym.spaces.Box(low=-1.0, high=1.0, shape=(4,))  # 4D continuous observation space ez így nem jó, miért lenne minden -1 és 1 között by default..
         # Load the CUDA library
 
